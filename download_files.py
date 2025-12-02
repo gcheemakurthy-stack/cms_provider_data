@@ -1,3 +1,12 @@
+#Steps involved
+
+#1. Pulls Datasets from the CMS Provider Data Metastore using the link provided in the assessment.
+#2. Applied filters to keep datasets with Theme as 'Hospitals'
+#3. Downloading the datasets using ThreadPoolExecutor library
+#4. Converting all the column names to snake case.
+#5. Tracking the last run timestamp in the Metadata, so that only the modified datasets are downloaded on future runs
+#6. The script is designed to run daily and can be scheduled using CRON or Task Scheduler.
+
 #Importing necessary libraries
 import requests
 import os
