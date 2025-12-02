@@ -37,7 +37,7 @@ for ds in datasets:
     if "hospitals" in [t.lower() for t in themes]:
         if modified:
             modified_dt = datetime.fromisoformat(modified.replace("Z", "+00:00"))
-            if not last_run_dt or modified_dt > last_run_dt:
+            if not last_run_dt or modified_dt < last_run_dt: # Logic to fetch for files modified after last run date.
                 new_datasets.append(ds)
 
 print(f"Found {len(new_datasets)} new/updated hospital datasets.")
